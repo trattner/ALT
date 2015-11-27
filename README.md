@@ -1,3 +1,3 @@
 # mysite (ALT)
-Hopefully this template turns out cool as I envisioned...someday....
-Feel free to try it out! 
+Note the MIT License, feel free to try this template out! 
+
