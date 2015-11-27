@@ -1,2 +1,3 @@
-# mysite
+# mysite (ALT)
 Hopefully this template turns out cool as I envisioned...someday....
+Feel free to try it out! 
