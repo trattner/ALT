@@ -1,2 +1,2 @@
 # mysite
-Andy Trattner's personal website. Feel free to use the template but please keep the commented attribution.
+Hopefully this template turns out cool as I envisioned...someday....
