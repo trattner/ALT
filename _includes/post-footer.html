@@ -1,0 +1,36 @@
+ </div>
+ </div>
+ <div class="footer">
+ 	<div class="content">
+ 		{% if page.previous != nil %}
+ 		<div class= "post">
+ 			<a class="post-link" href="{{ page.previous.url }}">
+ 				<span class="date">READ NEXT</span>
+ 				<h1>{{ page.previous.title }}</h1>
+ 				<!-- <span class="date">{{ page.date | date_to_long_string }}</span> -->
+			    <p>{{page.previous.content | truncate: 300}}</p>
+			    <p>
+			      <a class="btn-read" href="{{ page.previous.url }}">CONTINUE READING</a>
+  				</p>
+  			</a>
+  		</div>
+  		{% endif %}
+<br/>
+<center><span style="font-family:Raleway,sans-serif;color:#FFF">© 2015 Lean On Me. All rights reserved.</center>
+</div>
+ </div>
+
+<!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/main2.js"></script>
+
+  </body>
+</html>
