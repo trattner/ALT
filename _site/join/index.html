@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="icon" type="image/png" href="img/favicon-3.png">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Lean On Me automatically and anonymously matches peers to create a crowd-sourced texting network of instantaneous support accross organizations.
+">
+    <meta name="author" content="Lean On Me">
+
+    <meta property="og:title" content="Lean On Me" />
+    <meta property="og:site_name" content="Olive Health"/>
+    <meta property="og:url" content="http://olive.ai" />
+    <meta property="og:description" content="Lean On Me automatically and anonymously matches peers to create a crowd-sourced texting network of instantaneous support accross organizations."/>
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="img/LeanOnMe.jpg" />
+    <meta property="fb:app_id" content="1469413380046450" />
+    <title>Lean 0n Me</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/grayscale.css" rel="stylesheet">
+    <link href="/css/materialize.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--signups-->
+    
+    <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
+    <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js'></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <script>
+  var ref = new Firebase("https://leanonmedb.firebaseio.com/");
+    // window.fbAsyncInit = function() {
+    //   FB.init({
+    //     appId      : '178328532500643',
+    //     xfbml      : true,
+    //     version    : 'v2.4'
+    //   })
+    // };
+
+    // function(d, s, id){
+    //   var js, fjs = d.getElementsByTagName(s)[0];
+    //   if (d.getElementById(id)) {return;}
+    //   js = d.createElement(s); js.id = id;
+    //   js.src = "//connect.facebook.net/en_US/sdk.js";
+    //   fjs.parentNode.insertBefore(js, fjs);
+    // }(document, 'script', 'facebook-jssdk');
+  </script>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top top-nav-collapse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!-- <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">Start</span> Bootstrap
+                </a> -->
+                <a class="navbar-brand page-scroll" href="/">
+                    <img class="olive-logo-nav" src="/img/icon.png">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#team">Team</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/blog">Blog</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <div class="materialize-fit">
+    <header class="team">
+      <div class="signup-body">
+          <div class="container">
+
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <p>
+                      General Information
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input id="first_name" type="text" class="validate">
+                    <label for="first_name">First Name</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input id="grad" type="text" class="validate">
+                    <label for="grad">Graduation Year</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="phone" type="text" class="validate">
+                    <label for="phone">Phone Number (e.g. +16467984121)</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">MIT Email</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <p>
+                      Course
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="1"/>
+                      <label for="1">1 -  Civil and Environmental Engineering</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="15"/>
+                      <label for="15">15 - Management</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="2"/>
+                      <label for="2">2 - Mechanical Engineering</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="16"/>
+                      <label for="16">16 - Aeronautics and Astronautics</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="3"/>
+                      <label for="3">3 - Material Science and Engineering</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="17"/>
+                      <label for="17">17 - Political Science</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="4"/>
+                      <label for="4">4 - Architecture</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                     <p>
+                      <input type="checkbox" id="18"/>
+                      <label for="18">18 - Mathematics</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="5"/>
+                      <label for="5">5 - Chemistry</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="20"/>
+                      <label for="20">20 - Biological Engineering</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="6-1"/>
+                      <label for="6-1">6-1 - Electrical Engineering</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="21A"/>
+                      <label for="21A">21A - Anthropology</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="6-2"/>
+                      <label for="6-2">6-2 - Electrical Engineering and Computer Science</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="21F"/>
+                      <label for="21F">21F - Global Studies and Languages</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="6-3"/>
+                      <label for="6-3">6-3 - Computer Science and Engineering</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="21H"/>
+                      <label for="21H">21H - History</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="6-7"/>
+                      <label for="6-7">6-7 - Computational Biology</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="21L"/>
+                      <label for="21L">21L - Literature</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="7"/>
+                      <label for="7">7 - Biology</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="21M"/>
+                      <label for="21M">21M - Music and Theater Arts</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="8"/>
+                      <label for="8">8 - Physics</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="21W"/>
+                      <label for="21W">21W - Writing</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="9"/>
+                      <label for="9">9 - Brain and Cognitive Sciences</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="22"/>
+                      <label for="22">22 - Nuclear Science and Engineering</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="10"/>
+                      <label for="10">10 - Chemical Engineering</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="24"/>
+                      <label for="24">24 - Linguistics and Philosphy</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="11"/>
+                      <label for="11">11 - Urban Studies and Planning</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="CMS"/>
+                      <label for="CMS">CMS - Comparative Media Studies</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="12"/>
+                      <label for="12">12 - Earth, Atmospheric, and Planetary Sciences</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="MAS"/>
+                      <label for="MAS">MAS - Media Arts and Sciences</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="14"/>
+                      <label for="14">14 - Economics</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="STS"/>
+                      <label for="STS">STS - Science, Technology, and Society</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <p>
+                      Affiliation
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="affiliation" type="radio" id="frat"/>
+                      <label for="frat">Fraternity</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="affiliation" type="radio" id="no_affiliation"/>
+                      <label for="no_affiliation">Unaffiliated</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="affiliation" type="radio" id="sorority"/>
+                      <label for="sorority">Sorority</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="affiliation" type="radio" id="null_affiliation"/>
+                      <label for="null_affiliation">Prefer not to disclose</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <p>
+                      Where do you live?
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="live" type="radio" id="dorm"/>
+                      <label for="dorm">Dormitory</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="live" type="radio" id="fsilg"/>
+                      <label for="fsilg">I live in my FSILG</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="live" type="radio" id="off_campus"/>
+                      <label for="off_campus">Off Campus</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="live" type="radio" id="null_live"/>
+                      <label for="null_live">Prefer not to disclose</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <p>
+                      Gender
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="gender" type="radio" id="male"/>
+                      <label for="male">Male</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="gender" type="radio" id="neither_gender"/>
+                      <label for="neither_gender">I don't identify with either</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="gender" type="radio" id="female"/>
+                      <label for="female">Female</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="gender" type="radio" id="null_gender"/>
+                      <label for="null_gender">Prefer not to disclose</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <p>
+                      Ethnicity
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="caucasian"/>
+                      <label for="caucasian">Caucasian</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="middle_eastern"/>
+                      <label for="middle_eastern">Middle Eastern</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="hispanic_latino"/>
+                      <label for="hispanic_latino">Hispanic, Latino</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="east_southeast_asian"/>
+                      <label for="east_southeast_asian">East Asian, Southeast Asian</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="black"/>
+                      <label for="black">Black</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="indian_south_asian"/>
+                      <label for="indian_south_asian">Indian, South Asian</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="native_american"/>
+                      <label for="native_american">Native American</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="pacific_islander"/>
+                      <label for="pacific_islander">Pacific Islander</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="filipino"/>
+                      <label for="filipino">Filipino</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input type="checkbox" id="other_ethnicity"/>
+                      <label for="other_ethnicity">Other</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <p>
+                      Sexual Orientation
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="orientation" type="radio" id="straight"/>
+                      <label for="straight">Straight</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="orientation" type="radio" id="transgender"/>
+                      <label for="transgender">Transgender</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="orientation" type="radio" id="gay"/>
+                      <label for="gay">Gay</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="orientation" type="radio" id="queer"/>
+                      <label for="queer">Queer</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="orientation" type="radio" id="lesbian"/>
+                      <label for="lesbian">Lesbian</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="orientation" type="radio" id="asexual"/>
+                      <label for="asexual">Asexual</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="orientation" type="radio" id="bisexual"/>
+                      <label for="bisexual">Bisexual</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="orientation" type="radio" id="null_orientation"/>
+                      <label for="null_orientation">Prefer not to disclose</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <p>
+                      Are you a student athlete?
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="athlete" type="radio" id="athlete"/>
+                      <label for="athlete">Yes</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="athlete" type="radio" id="no_athlete"/>
+                      <label for="no_athlete">No</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <p>
+                      Where did you live before college?
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="east_coast"/>
+                      <label for="east_coast">U.S. East Coast</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="europe"/>
+                      <label for="europe">Europe</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="west_cost"/>
+                      <label for="no_athlete">U.S. West Coast</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="asia"/>
+                      <label for="asia">Asia</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="midwest"/>
+                      <label for="midwest">U.S. Midwest</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="middle_east"/>
+                      <label for="middle_east">Middle East</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="south"/>
+                      <label for="south">U.S. South</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="africa"/>
+                      <label for="africa">Africa</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="territories"/>
+                      <label for="territories">U.S. Territories</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="apac"/>
+                      <label for="apac">APAC</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="mexico"/>
+                      <label for="mexico">Mexico</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="russia"/>
+                      <label for="russia">Russia</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="canada"/>
+                      <label for="canada">Canada</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="other_hometown"/>
+                      <label for="other_hometown">Other</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="south_america"/>
+                      <label for="south_america">South America</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown" type="radio" id="null_hometowen"/>
+                      <label for="null_hometown">Prefer not to disclose</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <p>
+                      Which of the following best describes where you grew up?
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown_type" type="radio" id="city"/>
+                      <label for="city">City</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown_type" type="radio" id="rural"/>
+                      <label for="rural">Rural</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown_type" type="radio" id="small_town"/>
+                      <label for="small_town">Small Town</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown_type" type="radio" id="other_hometown_type"/>
+                      <label for="other_hometown_type">Other</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown_type" type="radio" id="suburban"/>
+                      <label for="suburban">Suburban</label>
+                    </p>
+                  </div>
+                  <div class="col s6">
+                    <p>
+                      <input name="hometown_type" type="radio" id="null_hometown_type"/>
+                      <label for="null_hometown_type">Prefer not to disclose</label>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <p>
+                      Essay Questions
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <textarea id="essay1" class="materialize-textarea"></textarea>
+                          <label for="essay1">Tell us your story.</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <textarea id="essay2" class="materialize-textarea"></textarea>
+                          <label for="essay2">Why do you want to be a peer supporter?</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <textarea id="essay3" class="materialize-textarea"></textarea>
+                          <label for="essay3">Anything else you want us to know?</label>
+                        </div>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="submit submit-default" id="submit" role="button">Submit Application</div>
+
+                <!-- <div class="row">
+                  <div class="input-field col s12">
+                    <textarea id="essay1" class="materialize-textarea"></textarea>
+                    <label for="essay1">300 words maximum</label>
+                  </div>
+                </div> -->
+
+              </form>
+            </div>
+              </div>
+          </div>
+        </header>
+      </div>
+
+    <!-- Inputs: kerb, name, class major, gender, FSILG, club, LBGTQA, athlete, Hometown, ethnicity, dorm, essay Q-->
+
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="/js/main2.js"></script>
+    <script src="/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+
+    $( "#submit" ).click(function() {
+    });
+
+    function fb_connect(){
+      var ref = new Firebase("https://leanonmedb.firebaseio.com");
+      ref.authWithOAuthPopup("facebook", function(error, authData) {
+        if (error) {
+          if (error.code === "TRANSPORT_UNAVAILABLE") {
+            // fall-back to browser redirects, and pick up the session
+            // automatically when we come back to the origin page
+            ref.authWithOAuthRedirect("facebook", function(error) {
+              console.log("Login Failed!", error);
+            });
+          }
+        } else {
+          // the access token will allow us to make Open Graph API calls
+          console.log(authData.facebook.accessToken);
+          console.log(authData.facebook.profileImageURL);
+
+        }
+      }, {
+        scope: "email,user_likes, public_profile" // the permissions requested
+      });
+    }
+  </script>
+
+</body>
+
+</html>

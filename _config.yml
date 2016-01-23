@@ -1,0 +1,12 @@
+name: "Lean On Me"
+description: "Lean On Me Blog"
+
+url: "http://lean0n.me"
+
+paginate: 5
+paginate_path: "blog/page:num/"
+markdown: rdiscount
+permalink: pretty
+highlighter: pygments
+gems:
+    - jekyll-redirect-from

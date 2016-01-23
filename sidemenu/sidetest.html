@@ -1,0 +1,260 @@
+1
+sideview <nav>
+  <ul class="right hide-on-med-and-down">
+    <li><a href="#!">First Sidebar Link</a></li>
+    <li><a href="#!">Second Sidebar Link</a></li>
+  </ul>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="#!">First Sidebar Link</a></li>
+    <li><a href="#!">Second Sidebar Link</a></li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+</nav>
+
+// Initialize collapse button
+$(".button-collapse").sideNav();
+// Initialize collapsible (uncomment the line below if you use the dropdown variation)
+//$('.collapsible').collapsible();
+
+$('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 240
+      edge: 'right', // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    }
+  );
+
+  // Show sideNav
+$('.button-collapse').sideNav('show');
+// Hide sideNav
+$('.button-collapse').sideNav('hide');
+
+<ul id="slide-out" class="side-nav">
+   <li><a href="#!">First Sidebar Link</a></li>
+   <li><a href="#!">Second Sidebar Link</a></li>
+   <li class="no-padding">
+     <ul class="collapsible collapsible-accordion">
+       <li>
+         <a class="collapsible-header">Dropdown<i class="mdi-navigation-arrow-drop-down"></i></a>
+         <div class="collapsible-body">
+           <ul>
+             <li><a href="#!">First</a></li>
+             <li><a href="#!">Second</a></li>
+             <li><a href="#!">Third</a></li>
+             <li><a href="#!">Fourth</a></li>
+           </ul>
+         </div>
+       </li>
+     </ul>
+   </li>
+ </ul>
+ <ul class="right hide-on-med-and-down">
+   <li><a href="#!">First Sidebar Link</a></li>
+   <li><a href="#!">Second Sidebar Link</a></li>
+   <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+   <ul id='dropdown1' class='dropdown-content'>
+     <li><a href="#!">First</a></li>
+     <li><a href="#!">Second</a></li>
+     <li><a href="#!">Third</a></li>
+     <li><a href="#!">Fourth</a></li>
+   </ul>
+ </ul>
+ <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+
+
+ <ul id="slide-out" class="side-nav">
+<li><a href="#!">First Sidebar Link</a></li>
+<li><a href="#!">Second Sidebar Link</a></li>
+</ul>
+<a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
+
+<ul id="slide-out" class="side-nav fixed">
+  <li><a href="#!">First Sidebar Link</a></li>
+  <li><a href="#!">Second Sidebar Link</a></li>
+</ul>
+<a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+
+header, main, footer {
+ padding-left: 240px;
+}
+
+@media only screen and (max-width : 992px) {
+ header, main, footer {
+   padding-left: 0;
+ }
+}
+
+2
+<link rel="stylesheet" type="text/css" href="/css/dark-glass/sidebar.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.8.13/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/jquery.sidebar.js"></script>
+<ul id="demo_menu1" >
+<li><a href="/" >home</a></li>
+<li><a href="/plugins/" >plugins</a></li>
+<li><a href="/works/" >works</a></li>
+<li><a href="http://d.hatena.ne.jp/sideroad/" >diary</a></li>
+<li><a href="/about/" >about</a></li>
+<li><a href="/contact/" >contact</a></li>
+</ul>
+
+$("ul#demo_menu1").sidebar();
+$("ul#demo_menu2").sidebar({
+position:"right",
+callback:{
+item : {
+enter : function(){
+$(this).find("a").animate({color:"red"}, 250);
+},
+leave : function(){
+$(this).find("a").animate({color:"white"}, 250);
+}
+}
+}
+});
+$("ul#demo_menu3").sidebar({
+position:"top",
+open:"click"
+});
+$("ul#demo_menu4").sidebar({
+position:"bottom"
+});
+$("ul#demo_menu5").sidebar({
+root: $("#include")
+});
+
+3
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>CSS Slideout</title>
+	<style type="text/css" media="screen">
+
+
+	</style>
+</head>
+<body>
+
+	<div id="slideout">
+		<img src="feedback.png" alt="Feedback" />
+		<div id="slideout_inner">
+			<form>
+				<textarea></textarea>
+				<input type="submit" value="Post feedback"></input>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
+
+4
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Side Content Example</title>
+	<link rel="stylesheet" type="text/css" href="optional.css">
+	<style type="text/css">
+		/* Optional styles */
+
+		.sidecontentpullout {
+			background-color: Black;
+			color: White;
+			padding: 4px 3px;
+			-moz-border-radius-bottomleft: 1em;
+			-moz-border-radius-topleft: 1em;
+			-webkit-border-bottom-left-radius: 1em;
+			-webkit-border-top-left-radius: 1em;
+			border-bottom-left-radius: 1em;
+			border-top-left-radius: 1em;
+		}
+
+		.sidecontentpullout:hover {
+			background-color: #444444;
+			color: White;
+		}
+
+		.sidecontent {
+			background-color: Black;
+			color: White;
+			-moz-border-radius-bottomleft: 1em;
+			-webkit-border-bottom-left-radius: 1em;
+			border-bottom-left-radius: 1em;
+		}
+
+		.sidecontent > div > div {
+			padding-left: 10px;
+			padding-right: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div id="links">
+		<p>This is the live demo,
+		Written by <a href="http://www.stevefenton.co.uk/">Steve Fenton</a>.</p>
+	</div>
+	<div id="header">
+		<h1>Side Content Example</h1>
+	</div>
+	<div id="maincontent">
+		<div id="what">
+			<h2>Side Content Summary</h2>
+			<p>The jQuery Side Content project is a plugin that docks content to the side of the browser window with "pull out" handles to open and close the panels.</p>
+			<p>You can add multiple side-content tabs to the side of your page and the plugin will automatically toggle them when the visitor clicks on the "pull out".</p>
+		</div>
+		<div id="how">
+			<div class="side" title="Slide 1">
+				<h2>Side Content</h2>
+				<p>This is the side content that you want to de-clutter from your page.</p>
+				<p>You can apply whatever CSS rules you like to this element, only the position and behaviour will be changed by the plugin.</p>
+				<p>There are plenty of configurable settings if you want to change the default behaviour!</p>
+			</div>
+			<div class="side" title="Slide 2">
+				<h2>More Content</h2>
+				<p>This is a different panel</p>
+				<p>This is the side content that you want to de-clutter from your page.</p>
+				<p>You can apply whatever CSS rules you like to this element, only the position and behaviour will be changed by the plugin.</p>
+				<p>There are plenty of configurable settings if you want to change the default behaviour!</p>
+			</div>
+			<div class="side" title="Slide 3">
+				<h2>Another One</h2>
+				<p>This is a different panel</p>
+			</div>
+		</div>
+		<div id="options">
+			<h2>Options</h2>
+			<dl>
+				<dt>classmodifier</dt>
+				<dd>Used to apply class names to the elements created by the plugin. You only need to specify a class modifier if you have a name-clash.</dd>
+
+				<dt>attachto</dt>
+				<dd>You can opt to dock the side content panels on the "leftside" or "rightside" of the browser.</dd>
+
+				<dt>width</dt>
+				<dd>The width of the panel when it is activated, for example "300px" or "33%".</dd>
+
+				<dt>opacity</dt>
+				<dd>Set this to a value less than "1" to make the footer semi-transparent, for example "0.8".</dd>
+
+				<dt>pulloutpadding</dt>
+				<dd>use this option to set a gap between the pullout tabs, for example "5" for 5 pixel spacing
+				(note, any padding you apply will eat into this number, so you might need to increase it if you don't see a gap)</dd>
+
+				<dt>textdirection</dt>
+				<dd>The direction of text on the pullout, "horizontal" or "vertical".</dd>
+
+				<dt>clickawayclose</dt>
+				<dd>Whether to close the tabs when the user clicks away from the tabs.</dd>
+			</dl>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.sidecontent.js"></script>
+	<script type="text/javascript">
+		$(".side").sidecontent();
+	</script>
+</body>
+</html>
