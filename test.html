@@ -1,0 +1,141 @@
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Andy Trattner's website blog thing."/>
+    <meta name="author" content="Andy Trattner"/>
+    <meta name="keywords" content="Andy, Andrew, Lam, Trattner, MIT, Northrop, Honeycomb, ISS, International, Space, Station, Chess, Poetry, Contact, Information, Facebook, LinkedIn, Email, Website, Massachusetts, Institute, Technology, Portland, Wisconsin, Oregon, Engineer, Engineering, Computer, Science, Aerospace, Education"/>
+    <title>ALT: Thoughts</title>
+    <meta property="og:title" content="ALT" />
+    <meta property="og:site_name" content="ALT: Thoughts"/>
+    <meta property="og:url" content="http://trattner.mit.edu" />
+    <meta property="og:description" content="Andy Trattner's website blog thing."/>
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="img/cartoon_face_schwab.png"/>
+
+    <!-- Core CSS -->
+    <link href="css/index-primary.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <nav class="navbar">
+      <div class="icon-container">
+        <a href="/index.html"><img id="nav-icon" src="img/alt.png"/></a>
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li><a href="how.html">How and Why</a></li>
+          <li><a href="reflections.html" id="current-link">Reflections</a></li>
+          <li><a href="poetry.html">Poetry</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="chess.html">Chess</a></li>
+          <li><a href="serial.html">Serial</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <!--<div class="nav-contact">
+        <div class="nav-contact-icon-container">
+          <img id="nav-contact-icon" src="img/cartoon_face_schwab.png"/>
+        </div>
+        <div class="nav-contact-links">
+          <ul>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      </div>-->
+    </nav>
+
+    <section class="content">
+      <div class="container" id="content-container">
+        <div class="post">
+          <div class="post-heading">
+            <button onclick="load()">load text</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
+
+<!-- Custom JS -->
+<script src="js/main.js"></script>
+
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<!-- Analytics -->
+<script src="js/require.js"></script>
+<!-- custom -->
+<script>
+  function load(){
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+
+      var getFileBlob = function (url, cb) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.responseType = "blob";
+        xhr.addEventListener('load', function() {
+            cb(xhr.response);
+        });
+        xhr.send();
+      };
+
+      var blobToFile = function (blob, name) {
+        blob.lastModifiedDate = new Date();
+        blob.name = name;
+        return blob;
+      };
+
+      var getFileObject = function(filePathOrUrl, cb) {
+             getFileBlob(filePathOrUrl, function (blob) {
+                cb(blobToFile(blob, 'test.jpg'));
+             });
+      };
+
+      var file_list = [];
+
+      $.ajax({
+        url: "posts/",
+        success: function(data){
+           $(data).find("td > a").each(function(){
+              // will loop through
+              file_list.push($(this).attr("href"));
+           });
+        },
+        complete: function(x,y) {
+          if (file_list.length > 1) {
+            for (i=1; i < file_list.length;i++){
+              getFileObject(file_list[i], function (fileObject) {
+                blob = fileObject;
+                var reader = new FileReader();
+                reader.addEventListener("loadend", function() {
+                  txt=reader.result;
+                  console.log('text: ' + txt);
+                });
+                reader.readAsText(blob);
+              });
+            }
+          }
+        },
+        error:function(err){
+          alert('Oops! Error: ' + err);
+        }
+      });
+
+    } else {
+      alert('The File APIs are not fully supported in this browser.');
+    }
+  }
+</script>
